@@ -1,3 +1,12 @@
+import streamlit as st
+import pandas as pd
+import numpy as np
+import plotly.express as px
+import shap
+import joblib
+import requests
+import io
+
 # ================================
 # CARGA DEL MODELO Y DATOS
 # ================================
@@ -5,8 +14,7 @@
 MODEL_URL = "https://raw.githubusercontent.com/tu_usuario/tu_repo/rama/FFNN_Total.pkl"
 DATA_URL = "https://raw.githubusercontent.com/tu_usuario/tu_repo/rama/data_paneles.xlsx"
 
-
-@st.cache_data
+@st.cache_resource
 def cargar_modelo():
     response = requests.get(MODEL_URL)
     with open("modelo.pkl", "wb") as f:
