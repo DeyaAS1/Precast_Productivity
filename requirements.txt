@@ -1,8 +1,5 @@
 streamlit
 pandas
-numpy
 plotly
-shap
-joblib
-requests
+numpy
 openpyxl
